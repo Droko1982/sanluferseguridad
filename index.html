@@ -303,73 +303,7 @@
   <header id="navbar" class="navbar">
     <div class="container navbar__inner">
       <a href="#hero" class="navbar__logo">
-        <svg class="navbar__logo-icon" width="40" height="44" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="nav-shield" x1="10" y1="5" x2="110" y2="135">
-              <stop offset="0%" stop-color="#1E6CB5"/>
-              <stop offset="50%" stop-color="#1A5BA0"/>
-              <stop offset="100%" stop-color="#0D3A6E"/>
-            </linearGradient>
-            <linearGradient id="nav-shield-edge" x1="10" y1="5" x2="110" y2="130">
-              <stop offset="0%" stop-color="#5BADE6"/>
-              <stop offset="100%" stop-color="#1A5BA0"/>
-            </linearGradient>
-            <linearGradient id="nav-eye-glow" x1="40" y1="50" x2="80" y2="80">
-              <stop offset="0%" stop-color="#A8E0F8"/>
-              <stop offset="100%" stop-color="#4FC3F7"/>
-            </linearGradient>
-            <radialGradient id="nav-iris" cx="50%" cy="50%">
-              <stop offset="0%" stop-color="#E3F6FC"/>
-              <stop offset="40%" stop-color="#4FC3F7"/>
-              <stop offset="100%" stop-color="#0D3A6E"/>
-            </radialGradient>
-            <filter id="nav-glow">
-              <feGaussianBlur stdDeviation="2" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <!-- Shield body -->
-          <path d="M60 5 L108 28 L108 65 C108 100 85 122 60 133 C35 122 12 100 12 65 L12 28 Z" fill="url(#nav-shield)" stroke="url(#nav-shield-edge)" stroke-width="3"/>
-          <!-- Shield inner border -->
-          <path d="M60 14 L100 33 L100 65 C100 94 80 114 60 124 C40 114 20 94 20 65 L20 33 Z" fill="none" stroke="#5BADE6" stroke-width="0.8" opacity="0.3"/>
-          <!-- Circuit lines radiating from eye -->
-          <g stroke="#4FC3F7" stroke-width="0.6" opacity="0.35">
-            <line x1="38" y1="58" x2="25" y2="45"/>
-            <line x1="82" y1="58" x2="95" y2="45"/>
-            <line x1="38" y1="72" x2="25" y2="85"/>
-            <line x1="82" y1="72" x2="95" y2="85"/>
-            <line x1="60" y1="50" x2="60" y2="35"/>
-            <line x1="60" y1="80" x2="60" y2="92"/>
-            <!-- Tiny circuit dots -->
-            <circle cx="25" cy="45" r="1.5" fill="#4FC3F7" stroke="none"/>
-            <circle cx="95" cy="45" r="1.5" fill="#4FC3F7" stroke="none"/>
-            <circle cx="25" cy="85" r="1.5" fill="#4FC3F7" stroke="none"/>
-            <circle cx="95" cy="85" r="1.5" fill="#4FC3F7" stroke="none"/>
-            <circle cx="60" cy="35" r="1.5" fill="#4FC3F7" stroke="none"/>
-          </g>
-          <!-- Eye outer shape (almond) -->
-          <path d="M28 65 Q44 42 60 42 Q76 42 92 65 Q76 88 60 88 Q44 88 28 65 Z" fill="none" stroke="url(#nav-eye-glow)" stroke-width="2" filter="url(#nav-glow)"/>
-          <!-- Eye white / sclera -->
-          <path d="M32 65 Q46 46 60 46 Q74 46 88 65 Q74 84 60 84 Q46 84 32 65 Z" fill="#0A2E5C" opacity="0.6"/>
-          <!-- Iris outer -->
-          <circle cx="60" cy="65" r="16" fill="url(#nav-iris)" opacity="0.9"/>
-          <!-- Iris ring detail -->
-          <circle cx="60" cy="65" r="13" fill="none" stroke="#A8E0F8" stroke-width="0.5" opacity="0.4"/>
-          <circle cx="60" cy="65" r="10" fill="none" stroke="#4FC3F7" stroke-width="0.8" opacity="0.5"/>
-          <!-- Pupil -->
-          <circle cx="60" cy="65" r="6" fill="#030B1A"/>
-          <!-- Pupil highlight -->
-          <circle cx="63" cy="62" r="2.5" fill="white" opacity="0.5"/>
-          <circle cx="57" cy="68" r="1.2" fill="white" opacity="0.25"/>
-          <!-- Scan line through eye -->
-          <line x1="30" y1="65" x2="90" y2="65" stroke="#4FC3F7" stroke-width="0.5" opacity="0.25"/>
-          <!-- Lock at bottom of shield -->
-          <g transform="translate(53,96)">
-            <rect x="0" y="4" width="14" height="10" rx="2" fill="#4FC3F7" opacity="0.7"/>
-            <path d="M3 4 V1 A4 4 0 0 1 11 1 V4" fill="none" stroke="#4FC3F7" stroke-width="1.5" opacity="0.7"/>
-            <circle cx="7" cy="9" r="1.5" fill="#0D3A6E"/>
-          </g>
-        </svg>
+        <img src="img/logo.jpeg" alt="Sanlufer Seguridad" class="navbar__logo-icon" width="44" height="44">
         <span>Sanlufer<strong>Seguridad</strong></span>
       </a>
 

@@ -303,7 +303,60 @@
   <header id="navbar" class="navbar">
     <div class="container navbar__inner">
       <a href="#hero" class="navbar__logo">
-        <img src="img/logo.jpeg" alt="Sanlufer Seguridad" class="navbar__logo-icon">
+        <svg class="navbar__logo-icon" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="nl-sh" x1="50" y1="0" x2="50" y2="120">
+              <stop offset="0%" stop-color="#2980C8"/>
+              <stop offset="100%" stop-color="#0C3468"/>
+            </linearGradient>
+            <linearGradient id="nl-edge" x1="50" y1="0" x2="50" y2="120">
+              <stop offset="0%" stop-color="#62B8E8"/>
+              <stop offset="100%" stop-color="#1A5BA0"/>
+            </linearGradient>
+            <radialGradient id="nl-iris" cx="50%" cy="50%">
+              <stop offset="0%" stop-color="#D6F0FC"/>
+              <stop offset="50%" stop-color="#4FC3F7"/>
+              <stop offset="100%" stop-color="#0D3A6E"/>
+            </radialGradient>
+          </defs>
+          <!-- Shield -->
+          <path d="M50 4 L94 24 L94 56 C94 88 72 106 50 116 C28 106 6 88 6 56 L6 24 Z" fill="url(#nl-sh)" stroke="url(#nl-edge)" stroke-width="2.5"/>
+          <path d="M50 12 L86 29 L86 56 C86 83 68 99 50 108 C32 99 14 83 14 56 L14 29 Z" fill="none" stroke="#5BADE6" stroke-width="0.8" opacity="0.25"/>
+          <!-- Circuit lines -->
+          <g stroke="#4FC3F7" stroke-width="0.7" opacity="0.4">
+            <line x1="30" y1="48" x2="18" y2="36"/><circle cx="18" cy="36" r="2" fill="#4FC3F7" stroke="none"/>
+            <line x1="70" y1="48" x2="82" y2="36"/><circle cx="82" cy="36" r="2" fill="#4FC3F7" stroke="none"/>
+            <line x1="30" y1="66" x2="18" y2="78"/><circle cx="18" cy="78" r="2" fill="#4FC3F7" stroke="none"/>
+            <line x1="70" y1="66" x2="82" y2="78"/><circle cx="82" cy="78" r="2" fill="#4FC3F7" stroke="none"/>
+            <line x1="50" y1="42" x2="50" y2="28"/><circle cx="50" cy="28" r="2" fill="#4FC3F7" stroke="none"/>
+            <line x1="50" y1="72" x2="50" y2="82"/>
+          </g>
+          <!-- Eye shape -->
+          <path d="M22 57 Q36 38 50 38 Q64 38 78 57 Q64 76 50 76 Q36 76 22 57 Z" fill="#07244E" stroke="#4FC3F7" stroke-width="1.5" opacity="0.9"/>
+          <!-- Scan lines across eye -->
+          <g stroke="#4FC3F7" stroke-width="0.3" opacity="0.2">
+            <line x1="26" y1="50" x2="74" y2="50"/>
+            <line x1="24" y1="54" x2="76" y2="54"/>
+            <line x1="24" y1="60" x2="76" y2="60"/>
+            <line x1="26" y1="64" x2="74" y2="64"/>
+          </g>
+          <!-- Iris -->
+          <circle cx="50" cy="57" r="14" fill="url(#nl-iris)" opacity="0.85"/>
+          <circle cx="50" cy="57" r="11" fill="none" stroke="#A8E0F8" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="50" cy="57" r="8" fill="none" stroke="#4FC3F7" stroke-width="0.6" opacity="0.4"/>
+          <!-- Pupil -->
+          <circle cx="50" cy="57" r="5" fill="#020D1F"/>
+          <circle cx="52.5" cy="54.5" r="2" fill="white" opacity="0.45"/>
+          <circle cx="47.5" cy="59.5" r="1" fill="white" opacity="0.2"/>
+          <!-- Eye glow -->
+          <path d="M22 57 Q36 38 50 38 Q64 38 78 57 Q64 76 50 76 Q36 76 22 57 Z" fill="none" stroke="#4FC3F7" stroke-width="0.6" opacity="0.15"/>
+          <!-- Lock -->
+          <g transform="translate(43,86)">
+            <rect x="0" y="5" width="14" height="11" rx="2.5" fill="#4FC3F7" opacity="0.65"/>
+            <path d="M3 5 V2 A4 4 0 0 1 11 2 V5" fill="none" stroke="#4FC3F7" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+            <circle cx="7" cy="10.5" r="1.8" fill="#0D3A6E"/>
+          </g>
+        </svg>
         <span>Sanlufer<strong>Seguridad</strong></span>
       </a>
 

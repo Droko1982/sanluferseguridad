@@ -6,16 +6,18 @@
   <title>Sanlufer Seguridad | Cámaras de Seguridad y Videovigilancia Colombia</title>
   <meta name="description" content="Sanlufer Seguridad: empresa líder en cámaras de seguridad y videovigilancia con IA en toda Colombia. Sede en Medellín con servicio en Bogotá, Cali, Armenia, Pereira, Barranquilla, Cartagena, Bucaramanga y Pasto. +15 años, +150 clientes. Hikvision, Dahua, Axis. Cotización gratis.">
   <meta name="author" content="Sanlufer Seguridad">
+  <meta name="keywords" content="cámaras de seguridad, videovigilancia, CCTV Colombia, seguridad electrónica Medellín, cámaras IP, control de acceso, automatización, alarmas, monitoreo 24/7, instalación cámaras Bogotá, videovigilancia Cali, seguridad empresarial, Hikvision Colombia, Dahua, cableado estructurado, fibra óptica, reconocimiento facial, seguridad con IA, cámaras de seguridad Medellín, videovigilancia Colombia, seguridad para empresas Colombia">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <!-- Geo Meta Tags for local SEO -->
-  <meta name="geo.region" content="CO">
-  <meta name="geo.placename" content="Colombia">
-  <meta name="geo.position" content="4.5339;-75.6811">
-  <meta name="ICBM" content="4.5339, -75.6811">
+  <!-- Geo Meta Tags for local SEO — Medellín, Colombia -->
+  <meta name="geo.region" content="CO-ANT">
+  <meta name="geo.placename" content="Medellín, Antioquia, Colombia">
+  <meta name="geo.position" content="6.2518;-75.5636">
+  <meta name="ICBM" content="6.2518, -75.5636">
   <link rel="canonical" href="https://sanluferseguridad.com/">
 
-  <!-- Hreflang -->
+  <!-- Hreflang — ES default, EN via ?lang=en -->
   <link rel="alternate" hreflang="es" href="https://sanluferseguridad.com/">
+  <link rel="alternate" hreflang="en" href="https://sanluferseguridad.com/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://sanluferseguridad.com/">
 
   <!-- Open Graph -->
@@ -41,6 +43,12 @@
   <meta name="theme-color" content="#0B1120" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)">
 
+  <!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://img.youtube.com">
+  <link rel="dns-prefetch" href="https://www.youtube.com">
+  <link rel="dns-prefetch" href="https://formsubmit.co">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,10 +70,12 @@
   <script>
     (function(){
       var t=localStorage.getItem('sanlufer-theme');
-      var l=localStorage.getItem('sanlufer-lang');
       var d=document.documentElement;
       if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
       else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)d.setAttribute('data-theme','light');
+      // Support ?lang=en URL parameter for hreflang crawling + saved preference
+      var p=new URLSearchParams(window.location.search).get('lang');
+      var l=(p==='en'||p==='es')?p:localStorage.getItem('sanlufer-lang');
       if(l==='en'||l==='es'){d.setAttribute('data-lang',l);d.setAttribute('lang',l);}
     })();
   </script>
@@ -136,14 +146,89 @@
   }
   </script>
 
-  <!-- Schema.org - WebSite -->
+  <!-- Schema.org - WebSite + SearchAction -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Sanlufer Seguridad",
     "url": "https://sanluferseguridad.com",
-    "inLanguage": ["es", "en"]
+    "inLanguage": ["es", "en"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://sanluferseguridad.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Schema.org - BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sanluferseguridad.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://sanluferseguridad.com/#servicios"},
+      {"@type": "ListItem", "position": 3, "name": "Nosotros", "item": "https://sanluferseguridad.com/#nosotros"},
+      {"@type": "ListItem", "position": 4, "name": "Cobertura", "item": "https://sanluferseguridad.com/#cobertura"},
+      {"@type": "ListItem", "position": 5, "name": "FAQ", "item": "https://sanluferseguridad.com/#faq"},
+      {"@type": "ListItem", "position": 6, "name": "Contacto", "item": "https://sanluferseguridad.com/#contacto"}
+    ]
+  }
+  </script>
+
+  <!-- Schema.org - Services -->
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Instalación de Cámaras de Seguridad y Videovigilancia",
+    "alternateName": "Videovigilancia Inteligente con IA",
+    "description": "Instalación profesional de cámaras de seguridad IP, CCTV, analítica de video con inteligencia artificial, reconocimiento facial y monitoreo remoto 24/7 en toda Colombia. Marcas: Hikvision, Dahua, Axis.",
+    "serviceType": "Videovigilancia",
+    "provider": {"@id": "https://sanluferseguridad.com/#organization"},
+    "areaServed": {"@type": "Country", "name": "Colombia"},
+    "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Planes de Videovigilancia", "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cámaras IP con analítica IA"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "CCTV para comercios y empresas"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Monitoreo remoto 24/7"}}
+    ]}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Automatización de Edificios y Control de Acceso",
+    "alternateName": "Automatización Inteligente",
+    "description": "Sistemas de control de acceso biométrico, reconocimiento facial, domótica, sensores IoT y gestión de edificios inteligentes. Soluciones para empresas, conjuntos residenciales y corporaciones en Colombia.",
+    "serviceType": "Automatización de Edificios",
+    "provider": {"@id": "https://sanluferseguridad.com/#organization"},
+    "areaServed": {"@type": "Country", "name": "Colombia"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Cableado Estructurado y Fibra Óptica Certificada",
+    "alternateName": "Infraestructura de Red Certificada",
+    "description": "Instalación de cableado estructurado categoría 6A, fibra óptica, redes certificadas, conectividad empresarial y centros de datos. Cobertura nacional en Colombia.",
+    "serviceType": "Cableado Estructurado",
+    "provider": {"@id": "https://sanluferseguridad.com/#organization"},
+    "areaServed": {"@type": "Country", "name": "Colombia"}
+  }]
+  </script>
+
+  <!-- Schema.org - VideoObject -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Sanlufer Seguridad - Presentación Corporativa",
+    "description": "Conozca los servicios de videovigilancia, cámaras de seguridad y automatización de edificios de Sanlufer Seguridad en Colombia. Más de 15 años protegiendo empresas en Medellín, Bogotá, Cali y toda Colombia.",
+    "thumbnailUrl": "https://img.youtube.com/vi/9q8xnuuJlZE/sddefault.jpg",
+    "uploadDate": "2026-01-15",
+    "contentUrl": "https://www.youtube.com/watch?v=9q8xnuuJlZE",
+    "embedUrl": "https://www.youtube.com/embed/9q8xnuuJlZE",
+    "publisher": {"@id": "https://sanluferseguridad.com/#organization"}
   }
   </script>
 
@@ -162,7 +247,12 @@
       {"@type": "Question", "name": "¿Puedo ver mis cámaras desde el celular?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, todos nuestros sistemas de videovigilancia incluyen acceso remoto desde su celular, tablet o computador. Le configuramos la app oficial del fabricante para monitorear su negocio en tiempo real desde cualquier lugar, 24/7."}},
       {"@type": "Question", "name": "¿Qué sectores atienden en Colombia?", "acceptedAnswer": {"@type": "Answer", "text": "Atendemos empresas, comercios, hoteles, conjuntos residenciales, condominios, instituciones educativas, centros médicos, bodegas, fábricas e industrias en toda Colombia. Diseñamos soluciones de seguridad personalizadas para cada sector, desde pequeños negocios hasta grandes corporaciones."}},
       {"@type": "Question", "name": "¿Instalan cámaras de seguridad en Bogotá, Medellín y Cali?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, tenemos cobertura en Bogotá, Medellín, Cali y las principales ciudades de Colombia. Nuestros técnicos certificados se desplazan a nivel nacional para instalaciones profesionales de videovigilancia, control de acceso y cableado estructurado."}},
-      {"@type": "Question", "name": "¿Por qué elegir Sanlufer Seguridad sobre otras empresas en Colombia?", "acceptedAnswer": {"@type": "Answer", "text": "Más de 15 años de experiencia, +150 clientes satisfechos, técnicos certificados por fabricantes (Hikvision, Dahua, Axis), garantía total en equipos y mano de obra, soporte 24/7, y presupuestos transparentes sin sorpresas. Somos distribuidores autorizados de las mejores marcas del mundo."}}
+      {"@type": "Question", "name": "¿Por qué elegir Sanlufer Seguridad sobre otras empresas en Colombia?", "acceptedAnswer": {"@type": "Answer", "text": "Más de 15 años de experiencia, +150 clientes satisfechos, técnicos certificados por fabricantes (Hikvision, Dahua, Axis), garantía total en equipos y mano de obra, soporte 24/7, y presupuestos transparentes sin sorpresas. Somos distribuidores autorizados de las mejores marcas del mundo."}},
+      {"@type": "Question", "name": "¿Qué tipo de cámara de seguridad es mejor para mi negocio?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de sus necesidades específicas. Para interiores como oficinas y comercios, recomendamos cámaras domo IP con resolución 4K y visión nocturna. Para exteriores y perímetros, cámaras tipo bala con protección IP67 y analítica IA. Para estacionamientos, cámaras con lectura de placas (LPR). Para zonas oscuras, tecnología ColorVu de Hikvision. Ofrecemos visitas técnicas gratuitas en Medellín, Bogotá, Cali y toda Colombia para recomendar la solución ideal."}},
+      {"@type": "Question", "name": "¿Cómo funciona la videovigilancia con inteligencia artificial?", "acceptedAnswer": {"@type": "Answer", "text": "La videovigilancia con IA utiliza algoritmos de aprendizaje profundo integrados en las cámaras para detectar automáticamente personas, vehículos, comportamientos sospechosos y cruce de líneas virtuales. El sistema envía alertas en tiempo real a su celular cuando detecta una anomalía. Esto reduce falsas alarmas hasta un 95% comparado con sistemas tradicionales. En Sanlufer Seguridad instalamos cámaras con analítica IA de Hikvision, Dahua y Axis en toda Colombia."}},
+      {"@type": "Question", "name": "¿Es legal instalar cámaras de seguridad en Colombia?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, la instalación de cámaras de seguridad en Colombia es completamente legal bajo la Ley 1581 de 2012 de protección de datos personales. Se debe informar a las personas mediante avisos visibles de que están siendo grabadas. En espacios privados como empresas, comercios y conjuntos residenciales, el propietario tiene derecho a instalar sistemas de videovigilancia. En Sanlufer Seguridad le asesoramos sobre el cumplimiento normativo."}},
+      {"@type": "Question", "name": "¿Cuántas cámaras de seguridad necesito para mi empresa?", "acceptedAnswer": {"@type": "Answer", "text": "La cantidad de cámaras depende del tamaño del área a cubrir, los puntos críticos de acceso y los requerimientos de seguridad. Como referencia general: un local comercial pequeño necesita 4-8 cámaras, una oficina mediana 8-16, y una bodega o fábrica grande puede requerir 32 o más. Ofrecemos visitas técnicas gratuitas donde nuestros ingenieros evalúan su espacio y diseñan un plano de cobertura óptimo. Servicio en Medellín, Bogotá, Cali, Barranquilla y toda Colombia."}},
+      {"@type": "Question", "name": "¿Qué marcas de cámaras de seguridad instalan en Colombia?", "acceptedAnswer": {"@type": "Answer", "text": "Somos distribuidores autorizados de las marcas líderes mundiales en videovigilancia: Hikvision (líder mundial #1), Dahua Technology, Axis Communications (premium), Avigilon (Motorola Solutions), y Hanwha Vision (Samsung). Todas nuestras cámaras incluyen garantía del fabricante y soporte técnico directo. Instalamos en Medellín, Bogotá, Cali, Barranquilla, Bucaramanga y todas las ciudades principales de Colombia."}}
     ]
   }
   </script>
@@ -1050,6 +1140,26 @@
           <summary><span class="lang-es">¿Por qué elegir Sanlufer Seguridad sobre otras empresas?</span><span class="lang-en">Why choose Sanlufer Seguridad over other companies?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
           <div class="faq__answer"><span class="lang-es">Más de 15 años de experiencia, +150 clientes satisfechos, técnicos certificados por fabricantes como Hikvision, Dahua y Axis, garantía total en equipos y mano de obra, soporte 24/7, y presupuestos transparentes sin sorpresas. Somos distribuidores autorizados de las mejores marcas del mundo en seguridad electrónica.</span><span class="lang-en">Over 15 years of experience, 150+ satisfied clients, technicians certified by manufacturers like Hikvision, Dahua and Axis, full warranty on equipment and labor, 24/7 support, and transparent pricing with no surprises. We are authorized distributors of the world's best electronic security brands.</span></div>
         </details>
+        <details class="faq__item glass-card">
+          <summary><span class="lang-es">¿Qué tipo de cámara de seguridad es mejor para mi negocio?</span><span class="lang-en">What type of security camera is best for my business?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="faq__answer"><span class="lang-es">Depende de sus necesidades. Para interiores como oficinas y comercios, recomendamos cámaras domo IP con resolución 4K y visión nocturna. Para exteriores y perímetros, cámaras tipo bala con protección IP67 y analítica IA. Para estacionamientos, cámaras con lectura de placas (LPR). Para zonas oscuras, tecnología ColorVu de Hikvision. Ofrecemos visitas técnicas gratuitas en Medellín, Bogotá, Cali y toda Colombia.</span><span class="lang-en">It depends on your needs. For interiors like offices and shops, we recommend dome IP cameras with 4K resolution and night vision. For outdoors and perimeters, bullet cameras with IP67 protection and AI analytics. For parking lots, cameras with license plate recognition (LPR). For dark areas, Hikvision ColorVu technology. We offer free technical visits in Medellín, Bogotá, Cali and all of Colombia.</span></div>
+        </details>
+        <details class="faq__item glass-card">
+          <summary><span class="lang-es">¿Cómo funciona la videovigilancia con inteligencia artificial?</span><span class="lang-en">How does AI-powered video surveillance work?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="faq__answer"><span class="lang-es">La videovigilancia con IA utiliza algoritmos de aprendizaje profundo integrados en las cámaras para detectar automáticamente personas, vehículos, comportamientos sospechosos y cruce de líneas virtuales. El sistema envía alertas en tiempo real a su celular cuando detecta una anomalía, reduciendo falsas alarmas hasta un 95%. En Sanlufer Seguridad instalamos cámaras con analítica IA de Hikvision, Dahua y Axis en toda Colombia.</span><span class="lang-en">AI-powered video surveillance uses deep learning algorithms built into the cameras to automatically detect people, vehicles, suspicious behavior and virtual line crossing. The system sends real-time alerts to your phone when it detects an anomaly, reducing false alarms by up to 95%. At Sanlufer Seguridad we install cameras with AI analytics from Hikvision, Dahua and Axis across all of Colombia.</span></div>
+        </details>
+        <details class="faq__item glass-card">
+          <summary><span class="lang-es">¿Es legal instalar cámaras de seguridad en Colombia?</span><span class="lang-en">Is it legal to install security cameras in Colombia?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="faq__answer"><span class="lang-es">Sí, la instalación de cámaras de seguridad en Colombia es completamente legal bajo la Ley 1581 de 2012 de protección de datos personales. Se debe informar a las personas mediante avisos visibles de que están siendo grabadas. En espacios privados como empresas, comercios y conjuntos residenciales, el propietario tiene derecho a instalar sistemas de videovigilancia. En Sanlufer Seguridad le asesoramos sobre el cumplimiento normativo.</span><span class="lang-en">Yes, installing security cameras in Colombia is completely legal under Law 1581 of 2012 on personal data protection. People must be informed through visible signs that they are being recorded. In private spaces such as businesses, shops and residential complexes, the owner has the right to install video surveillance systems. At Sanlufer Seguridad we advise you on regulatory compliance.</span></div>
+        </details>
+        <details class="faq__item glass-card">
+          <summary><span class="lang-es">¿Cuántas cámaras de seguridad necesito para mi empresa?</span><span class="lang-en">How many security cameras do I need for my business?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="faq__answer"><span class="lang-es">La cantidad depende del tamaño del área y los puntos críticos de acceso. Como referencia: un local comercial pequeño necesita 4-8 cámaras, una oficina mediana 8-16, y una bodega o fábrica grande puede requerir 32 o más. Ofrecemos visitas técnicas gratuitas donde nuestros ingenieros evalúan su espacio y diseñan un plano de cobertura óptimo. Servicio en Medellín, Bogotá, Cali, Barranquilla y toda Colombia.</span><span class="lang-en">The number depends on the size of the area and critical access points. As a reference: a small retail store needs 4-8 cameras, a medium office 8-16, and a large warehouse or factory may require 32 or more. We offer free technical visits where our engineers assess your space and design an optimal coverage plan. Service in Medellín, Bogotá, Cali, Barranquilla and all of Colombia.</span></div>
+        </details>
+        <details class="faq__item glass-card">
+          <summary><span class="lang-es">¿Qué marcas de cámaras de seguridad instalan en Colombia?</span><span class="lang-en">What security camera brands do you install in Colombia?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="faq__answer"><span class="lang-es">Somos distribuidores autorizados de las marcas líderes mundiales: Hikvision (líder mundial #1), Dahua Technology, Axis Communications (premium), Avigilon (Motorola Solutions) y Hanwha Vision (Samsung). Todas nuestras cámaras incluyen garantía del fabricante y soporte técnico directo. Instalamos en Medellín, Bogotá, Cali, Barranquilla, Bucaramanga y todas las ciudades principales de Colombia.</span><span class="lang-en">We are authorized distributors of the world's leading brands: Hikvision (world leader #1), Dahua Technology, Axis Communications (premium), Avigilon (Motorola Solutions) and Hanwha Vision (Samsung). All our cameras include manufacturer warranty and direct technical support. We install in Medellín, Bogotá, Cali, Barranquilla, Bucaramanga and all major cities in Colombia.</span></div>
+        </details>
       </div>
     </div>
   </section>
@@ -1243,7 +1353,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="js/animations.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>

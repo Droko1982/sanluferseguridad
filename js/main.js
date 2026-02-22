@@ -635,32 +635,6 @@ function initBrandsPause() {
 }
 
 // ==========================================
-// VIDEO SHOWCASE PLAY BUTTON
-// ==========================================
-function initVideoShowcase() {
-  var video = document.getElementById('showcaseVideo');
-  var btn = document.getElementById('videoPlayBtn');
-  if (!video || !btn) return;
-
-  btn.addEventListener('click', function() {
-    video.play();
-    btn.classList.add('hidden');
-  });
-
-  video.addEventListener('pause', function() {
-    if (!video.ended) btn.classList.remove('hidden');
-  });
-
-  video.addEventListener('ended', function() {
-    btn.classList.remove('hidden');
-  });
-
-  video.addEventListener('play', function() {
-    btn.classList.add('hidden');
-  });
-}
-
-// ==========================================
 // INITIALIZE EVERYTHING
 // ==========================================
 // ==========================================
@@ -760,5 +734,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppBilingual();
   initBrandsPause();
   initColombiaMap();
-  initVideoShowcase();
 });

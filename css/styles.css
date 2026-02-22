@@ -1914,34 +1914,20 @@ noscript .noscript-warning {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-.video-showcase__video {
+.video-showcase__player iframe {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: #000;
+  border: 0;
 }
 
-.video-showcase__play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.video-showcase__player--vertical {
+  max-width: 400px;
 }
 
-.video-showcase__play:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-.video-showcase__play.hidden {
-  opacity: 0;
-  pointer-events: none;
+.video-showcase__player--vertical iframe {
+  aspect-ratio: 9 / 16;
 }
 
 [data-theme="light"] .video-showcase__player {

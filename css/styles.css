@@ -1912,6 +1912,7 @@ noscript .noscript-warning {
   border: 1px solid var(--glass-border);
   background: #000;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  aspect-ratio: 16 / 9;
 }
 
 .video-showcase__thumb {

@@ -721,20 +721,61 @@ function initColombiaMap() {
 // VIDEO SHOWCASE — click thumbnail to play
 // ==========================================
 function initVideoShowcase() {
+  // Load YouTube IFrame API
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
   document.querySelectorAll('.video-showcase__player[data-video-id]').forEach(function(player) {
     var btn = player.querySelector('.video-showcase__play');
-    if (!btn) return;
-    btn.addEventListener('click', function() {
-      var id = player.getAttribute('data-video-id');
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
-      iframe.title = 'Sanlufer Seguridad';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen = true;
-      player.querySelector('.video-showcase__thumb').remove();
-      btn.remove();
-      player.appendChild(iframe);
-    });
+    var thumb = player.querySelector('.video-showcase__thumb');
+    if (!btn || !thumb) return;
+
+    var videoId = player.getAttribute('data-video-id');
+    var ytPlayer = null;
+
+    function showThumbnail() {
+      // Remove iframe wrapper if present
+      var wrapper = player.querySelector('.video-showcase__yt');
+      if (wrapper) wrapper.remove();
+      ytPlayer = null;
+      // Restore thumbnail and button
+      thumb.style.display = '';
+      btn.style.display = '';
+    }
+
+    function startVideo() {
+      thumb.style.display = 'none';
+      btn.style.display = 'none';
+      var div = document.createElement('div');
+      div.className = 'video-showcase__yt';
+      player.appendChild(div);
+
+      function createPlayer() {
+        ytPlayer = new YT.Player(div, {
+          videoId: videoId,
+          playerVars: { autoplay: 1, rel: 0, modestbranding: 1 },
+          events: {
+            onStateChange: function(e) {
+              if (e.data === YT.PlayerState.ENDED) showThumbnail();
+            }
+          }
+        });
+      }
+
+      if (window.YT && window.YT.Player) {
+        createPlayer();
+      } else {
+        // API not loaded yet — queue it
+        var prev = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = function() {
+          if (prev) prev();
+          createPlayer();
+        };
+      }
+    }
+
+    btn.addEventListener('click', startVideo);
   });
 }
 

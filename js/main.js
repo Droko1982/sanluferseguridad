@@ -732,14 +732,15 @@ function initVideoShowcase() {
     if (!btn || !thumb) return;
 
     var videoId = player.getAttribute('data-video-id');
+    var endTime = parseInt(player.getAttribute('data-video-end'), 10) || 0;
     var ytPlayer = null;
+    var endTimer = null;
 
     function showThumbnail() {
-      // Remove iframe wrapper if present
+      if (endTimer) { clearTimeout(endTimer); endTimer = null; }
       var wrapper = player.querySelector('.video-showcase__yt');
       if (wrapper) wrapper.remove();
       ytPlayer = null;
-      // Restore thumbnail and button
       thumb.style.display = '';
       btn.style.display = '';
     }
@@ -751,13 +752,20 @@ function initVideoShowcase() {
       div.className = 'video-showcase__yt';
       player.appendChild(div);
 
+      var vars = { autoplay: 1, rel: 0, modestbranding: 1 };
+      if (endTime > 0) vars.end = endTime;
+
       function createPlayer() {
         ytPlayer = new YT.Player(div, {
           videoId: videoId,
-          playerVars: { autoplay: 1, rel: 0, modestbranding: 1 },
+          playerVars: vars,
           events: {
             onStateChange: function(e) {
               if (e.data === YT.PlayerState.ENDED) showThumbnail();
+              // Safety timer: if end param is set, force stop after endTime+1s
+              if (e.data === YT.PlayerState.PLAYING && endTime > 0 && !endTimer) {
+                endTimer = setTimeout(showThumbnail, endTime * 1000 + 1000);
+              }
             }
           }
         });

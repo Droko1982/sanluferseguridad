@@ -1940,6 +1940,7 @@ noscript .noscript-warning {
   opacity: 1;
 }
 
+.video-showcase__yt,
 .video-showcase__player iframe {
   position: absolute;
   top: 0;

@@ -645,8 +645,14 @@ noscript .noscript-warning {
   z-index: calc(var(--z-nav) + 1);
 }
 
-.navbar__logo svg {
+.navbar__logo-icon {
   flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(79,195,247,0.3));
+  transition: filter 0.3s;
+}
+
+.navbar__logo:hover .navbar__logo-icon {
+  filter: drop-shadow(0 0 10px rgba(79,195,247,0.5));
 }
 
 .navbar__logo span {

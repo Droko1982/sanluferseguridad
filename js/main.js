@@ -717,6 +717,27 @@ function initColombiaMap() {
   }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
 }
 
+// ==========================================
+// VIDEO SHOWCASE — click thumbnail to play
+// ==========================================
+function initVideoShowcase() {
+  document.querySelectorAll('.video-showcase__player[data-video-id]').forEach(function(player) {
+    var btn = player.querySelector('.video-showcase__play');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var id = player.getAttribute('data-video-id');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      iframe.title = 'Sanlufer Seguridad';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      player.querySelector('.video-showcase__thumb').remove();
+      btn.remove();
+      player.appendChild(iframe);
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initLanguageToggle();
   initThemeToggle();
@@ -734,4 +755,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppBilingual();
   initBrandsPause();
   initColombiaMap();
+  initVideoShowcase();
 });

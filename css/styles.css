@@ -647,15 +647,15 @@ noscript .noscript-warning {
 
 .navbar__logo-icon {
   flex-shrink: 0;
-  height: 54px;
+  height: 48px;
   width: auto;
-  object-fit: contain;
   transition: filter 0.3s, transform 0.3s;
+  filter: drop-shadow(0 0 4px rgba(79,195,247,0.2));
 }
 
 .navbar__logo:hover .navbar__logo-icon {
-  filter: brightness(1.1);
-  transform: scale(1.04);
+  filter: drop-shadow(0 0 8px rgba(79,195,247,0.45));
+  transform: scale(1.05);
 }
 
 .navbar__logo span {
